@@ -1,0 +1,83 @@
+:root {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #1f2328;
+  background: #f6f8fa;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.app__header h1 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+}
+
+.entity-list {
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.entity-list__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.entity-list__count {
+  color: #57606a;
+  font-size: 0.875rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #eaeef2;
+}
+
+th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #57606a;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge--active {
+  background: #dafbe1;
+  color: #1a7f37;
+}
+
+.status-badge--inactive {
+  background: #eaeef2;
+  color: #57606a;
+}
+
+.status-badge--alert {
+  background: #ffebe9;
+  color: #cf222e;
+}
