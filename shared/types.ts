@@ -1,6 +1,7 @@
 // Shared between the Express server and the React client.
 
-export type EntityStatus = 'active' | 'inactive' | 'alert';
+export const ENTITY_STATUSES = ['active', 'inactive', 'alert'] as const;
+export type EntityStatus = typeof ENTITY_STATUSES[number];
 
 export interface GeoLocation {
   lat: number;
