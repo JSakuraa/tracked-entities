@@ -33,11 +33,14 @@ export function EntityList() {
           />
           Sort by category
         </label>
-        <select value={filter} onChange={(e) => setFilter(e.target.value as FilterOption)}>
-          {FILTER_OPTIONS.map((opt) => (
-            <option key={opt} value={opt}>{opt}</option>
-          ))}
-        </select>
+        <label>
+          Filter by status:
+          <select value={filter} onChange={(e) => setFilter(e.target.value as FilterOption)}>
+            {FILTER_OPTIONS.map((opt) => (
+              <option key={opt} value={opt}>{opt.charAt(0).toUpperCase() + opt.slice(1)}</option>
+            ))}
+          </select>
+        </label>
         <span className="entity-list__count">{visibleEntities.length} entities</span>
       </div>
 
@@ -50,15 +53,21 @@ export function EntityList() {
           </tr>
         </thead>
         <tbody>
-          {visibleEntities.map((entity) => (
-            <tr key={entity.id}>
-              <td>{entity.name}</td>
-              <td>
-                <StatusBadge status={entity.status} />
-              </td>
-              <td>{entity.category}</td>
+          {visibleEntities.length > 0 ? (
+            visibleEntities.map((entity) => (
+              <tr key={entity.id}>
+                <td>{entity.name}</td>
+                <td>
+                  <StatusBadge status={entity.status} />
+                </td>
+                <td>{entity.category}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={3}>No entities match</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </section>
